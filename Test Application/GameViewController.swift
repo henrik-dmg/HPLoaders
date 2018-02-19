@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
 
     var hpView: HPCircleLoader!
     var hpBall: HPBallLoader!
+    var hpWave: HPWaveLoader!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +24,66 @@ class GameViewController: UIViewController {
         
         hpBall = HPBallLoader(frame: CGRect(x: self.view.frame.width / 4, y: 100, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
         self.view.addSubview(hpBall)
+        
+        hpWave = HPWaveLoader(frame: CGRect(x: self.view.frame.width / 2, y: 100, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
+        self.view.addSubview(hpWave)
     }
 
     @IBAction func start(_ sender: Any) {
         hpView.startAnimating()
         hpBall.startAnimating()
+        hpWave.startAnimating(with: 2, amplitude: .half)
     }
     
     @IBAction func stop(_ sender: Any) {
         hpView.stopAnimating()
+        hpBall.stopAnimating()
+        hpWave.stopAnimating()
+    }
+    
+    @IBAction func randomizeWave(_ sender: Any) {
+        hpBall.ball?.fillColor = .randomColor(type: .Red)
+        hpWave.numberOfDots = Int(arc4random_uniform(10) + 1)
+        hpWave.dotColor = .random
     }
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+}
+
+extension SKColor {
+    enum ColorType {
+        case Red
+        case Blue
+        case Green
+    }
+    
+    class var random: SKColor {
+        let red = CGFloat(arc4random_uniform(256))
+        let green = CGFloat(arc4random_uniform(256))
+        let blue = CGFloat(arc4random_uniform(256))
+        
+        return SKColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
+    }
+    
+    class func randomColor(type: ColorType) -> SKColor {
+        let major = GKRandomDistribution(randomSource: GKRandomSource(), lowestValue: 100, highestValue: 255)
+        let minor = GKRandomDistribution(randomSource: GKRandomSource(), lowestValue: 0, highestValue: 70)
+        
+        var postRed = CGFloat(minor.nextInt())
+        var postGreen = CGFloat(minor.nextInt())
+        var postBlue = CGFloat(minor.nextInt())
+        
+        switch type {
+        case .Red:
+            postRed = CGFloat(major.nextInt())
+        case .Green:
+            postGreen = CGFloat(major.nextInt())
+        case .Blue:
+            postBlue = CGFloat(major.nextInt())
+        }
+        
+        return SKColor(red: postRed/255, green: postGreen/255, blue: postBlue/255, alpha: 1)
     }
 }

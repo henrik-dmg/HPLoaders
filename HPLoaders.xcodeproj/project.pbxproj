@@ -13,8 +13,14 @@
 		C352D9B220374DA100252317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C352D9B120374DA100252317 /* Assets.xcassets */; };
 		C352D9B520374DA100252317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C352D9B320374DA100252317 /* LaunchScreen.storyboard */; };
 		C352D9BB20374E1C00252317 /* HPCircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9BA20374E1C00252317 /* HPCircleLoader.swift */; };
-		C35EDE3C203A39410069ADCF /* HPBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EDE3B203A39410069ADCF /* HPBallPulse.swift */; };
+		C35EDE3C203A39410069ADCF /* HPBallLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EDE3B203A39410069ADCF /* HPBallLoader.swift */; };
 		C37B88D720373CC2009211A6 /* HPLoaders.h in Headers */ = {isa = PBXBuildFile; fileRef = C37B88D520373CC2009211A6 /* HPLoaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C386E455203B3DD20094F48F /* HPWaveLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386E454203B3DD20094F48F /* HPWaveLoader.swift */; };
+		C386E456203B4A540094F48F /* HPCircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9BA20374E1C00252317 /* HPCircleLoader.swift */; };
+		C386E457203B4A540094F48F /* HPBallLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EDE3B203A39410069ADCF /* HPBallLoader.swift */; };
+		C386E458203B4A540094F48F /* HPWaveLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386E454203B3DD20094F48F /* HPWaveLoader.swift */; };
+		C386E459203B4A5F0094F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C352D9B120374DA100252317 /* Assets.xcassets */; };
+		C386E45B203B4A820094F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C386E45A203B4A820094F48F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +32,12 @@
 		C352D9B420374DA100252317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C352D9B620374DA100252317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C352D9BA20374E1C00252317 /* HPCircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPCircleLoader.swift; sourceTree = "<group>"; };
-		C35EDE3B203A39410069ADCF /* HPBallPulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBallPulse.swift; sourceTree = "<group>"; };
+		C35EDE3B203A39410069ADCF /* HPBallLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBallLoader.swift; sourceTree = "<group>"; };
 		C37B88D220373CC2009211A6 /* HPLoaders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HPLoaders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37B88D520373CC2009211A6 /* HPLoaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPLoaders.h; sourceTree = "<group>"; };
 		C37B88D620373CC2009211A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C386E454203B3DD20094F48F /* HPWaveLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPWaveLoader.swift; sourceTree = "<group>"; };
+		C386E45A203B4A820094F48F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,13 +62,11 @@
 			isa = PBXGroup;
 			children = (
 				C352D9A420374DA100252317 /* AppDelegate.swift */,
-				C352D9BA20374E1C00252317 /* HPCircleLoader.swift */,
-				C35EDE3B203A39410069ADCF /* HPBallPulse.swift */,
 				C352D9AC20374DA100252317 /* GameViewController.swift */,
 				C352D9AE20374DA100252317 /* Main.storyboard */,
 				C352D9B320374DA100252317 /* LaunchScreen.storyboard */,
-				C352D9B120374DA100252317 /* Assets.xcassets */,
 				C352D9B620374DA100252317 /* Info.plist */,
+				C386E45A203B4A820094F48F /* Assets.xcassets */,
 			);
 			path = "Test Application";
 			sourceTree = "<group>";
@@ -86,8 +92,12 @@
 		C37B88D420373CC2009211A6 /* HPLoaders */ = {
 			isa = PBXGroup;
 			children = (
+				C352D9BA20374E1C00252317 /* HPCircleLoader.swift */,
+				C35EDE3B203A39410069ADCF /* HPBallLoader.swift */,
+				C386E454203B3DD20094F48F /* HPWaveLoader.swift */,
 				C37B88D520373CC2009211A6 /* HPLoaders.h */,
 				C37B88D620373CC2009211A6 /* Info.plist */,
+				C352D9B120374DA100252317 /* Assets.xcassets */,
 			);
 			path = HPLoaders;
 			sourceTree = "<group>";
@@ -188,6 +198,7 @@
 			files = (
 				C352D9B020374DA100252317 /* Main.storyboard in Resources */,
 				C352D9B220374DA100252317 /* Assets.xcassets in Resources */,
+				C386E45B203B4A820094F48F /* Assets.xcassets in Resources */,
 				C352D9B520374DA100252317 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C386E459203B4A5F0094F48F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,9 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C35EDE3C203A39410069ADCF /* HPBallPulse.swift in Sources */,
+				C35EDE3C203A39410069ADCF /* HPBallLoader.swift in Sources */,
 				C352D9BB20374E1C00252317 /* HPCircleLoader.swift in Sources */,
 				C352D9AD20374DA100252317 /* GameViewController.swift in Sources */,
+				C386E455203B3DD20094F48F /* HPWaveLoader.swift in Sources */,
 				C352D9A520374DA100252317 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C386E456203B4A540094F48F /* HPCircleLoader.swift in Sources */,
+				C386E458203B4A540094F48F /* HPWaveLoader.swift in Sources */,
+				C386E457203B4A540094F48F /* HPBallLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

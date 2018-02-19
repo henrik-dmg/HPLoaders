@@ -32,12 +32,21 @@
                                     <action selector="stop:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Xgi-OF-Dut"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHb-ki-eGK">
+                                <rect key="frame" x="283" y="613" width="76" height="30"/>
+                                <state key="normal" title="Randomize"/>
+                                <connections>
+                                    <action selector="randomizeWave:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Bgw-Rq-5Yg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Fb6-nC-DDP" secondAttribute="bottom" constant="24" id="6cV-ZF-Tou"/>
                             <constraint firstItem="YKP-HO-cxl" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="8d1-7D-qIe"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="WHb-ki-eGK" secondAttribute="trailing" constant="16" id="Vgg-if-OR6"/>
                             <constraint firstItem="Fb6-nC-DDP" firstAttribute="top" secondItem="YKP-HO-cxl" secondAttribute="bottom" constant="24" id="bjx-zo-TUn"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="WHb-ki-eGK" secondAttribute="bottom" constant="24" id="xTD-Yf-KhW"/>
                             <constraint firstItem="Fb6-nC-DDP" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="zpr-Eh-jf4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>

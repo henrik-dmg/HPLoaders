@@ -76,7 +76,12 @@ class HPBallScene: SKScene {
     }
     
     func stopAnimating() {
-        ball.removeAllActions()
+        ball.run(SKAction.speed(to: 3, duration: 0.3))
+        ball.run(SKAction.fadeOut(withDuration: 0.5)) {
+            self.ball.removeAllActions()
+            self.ball.speed = 1
+            self.ball.setScale(0.7)
+        }
     }
 }
 
