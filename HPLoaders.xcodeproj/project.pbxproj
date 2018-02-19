@@ -7,16 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C352D9A520374DA100252317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9A420374DA100252317 /* AppDelegate.swift */; };
+		C352D9AD20374DA100252317 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9AC20374DA100252317 /* GameViewController.swift */; };
+		C352D9B020374DA100252317 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C352D9AE20374DA100252317 /* Main.storyboard */; };
+		C352D9B220374DA100252317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C352D9B120374DA100252317 /* Assets.xcassets */; };
+		C352D9B520374DA100252317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C352D9B320374DA100252317 /* LaunchScreen.storyboard */; };
+		C352D9BB20374E1C00252317 /* HPCircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9BA20374E1C00252317 /* HPCircleLoader.swift */; };
+		C35EDE3C203A39410069ADCF /* HPBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EDE3B203A39410069ADCF /* HPBallPulse.swift */; };
 		C37B88D720373CC2009211A6 /* HPLoaders.h in Headers */ = {isa = PBXBuildFile; fileRef = C37B88D520373CC2009211A6 /* HPLoaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C352D9A220374DA100252317 /* Test Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C352D9A420374DA100252317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C352D9AC20374DA100252317 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		C352D9AF20374DA100252317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C352D9B120374DA100252317 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C352D9B420374DA100252317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C352D9B620374DA100252317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C352D9BA20374E1C00252317 /* HPCircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPCircleLoader.swift; sourceTree = "<group>"; };
+		C35EDE3B203A39410069ADCF /* HPBallPulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBallPulse.swift; sourceTree = "<group>"; };
 		C37B88D220373CC2009211A6 /* HPLoaders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HPLoaders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37B88D520373CC2009211A6 /* HPLoaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPLoaders.h; sourceTree = "<group>"; };
 		C37B88D620373CC2009211A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C352D99F20374DA100252317 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C37B88CE20373CC2009211A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -27,10 +50,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C352D9A320374DA100252317 /* Test Application */ = {
+			isa = PBXGroup;
+			children = (
+				C352D9A420374DA100252317 /* AppDelegate.swift */,
+				C352D9BA20374E1C00252317 /* HPCircleLoader.swift */,
+				C35EDE3B203A39410069ADCF /* HPBallPulse.swift */,
+				C352D9AC20374DA100252317 /* GameViewController.swift */,
+				C352D9AE20374DA100252317 /* Main.storyboard */,
+				C352D9B320374DA100252317 /* LaunchScreen.storyboard */,
+				C352D9B120374DA100252317 /* Assets.xcassets */,
+				C352D9B620374DA100252317 /* Info.plist */,
+			);
+			path = "Test Application";
+			sourceTree = "<group>";
+		};
 		C37B88C820373CC2009211A6 = {
 			isa = PBXGroup;
 			children = (
 				C37B88D420373CC2009211A6 /* HPLoaders */,
+				C352D9A320374DA100252317 /* Test Application */,
 				C37B88D320373CC2009211A6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				C37B88D220373CC2009211A6 /* HPLoaders.framework */,
+				C352D9A220374DA100252317 /* Test Application.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +106,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C352D9A120374DA100252317 /* Test Application */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C352D9B720374DA100252317 /* Build configuration list for PBXNativeTarget "Test Application" */;
+			buildPhases = (
+				C352D99E20374DA100252317 /* Sources */,
+				C352D99F20374DA100252317 /* Frameworks */,
+				C352D9A020374DA100252317 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Test Application";
+			productName = "Test Application";
+			productReference = C352D9A220374DA100252317 /* Test Application.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C37B88D120373CC2009211A6 /* HPLoaders */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C37B88DA20373CC2009211A6 /* Build configuration list for PBXNativeTarget "HPLoaders" */;
@@ -90,11 +147,17 @@
 		C37B88C920373CC2009211A6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Henrik Panhans";
 				TargetAttributes = {
+					C352D9A120374DA100252317 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					C37B88D120373CC2009211A6 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -105,6 +168,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = C37B88C820373CC2009211A6;
 			productRefGroup = C37B88D320373CC2009211A6 /* Products */;
@@ -112,11 +176,22 @@
 			projectRoot = "";
 			targets = (
 				C37B88D120373CC2009211A6 /* HPLoaders */,
+				C352D9A120374DA100252317 /* Test Application */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C352D9A020374DA100252317 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C352D9B020374DA100252317 /* Main.storyboard in Resources */,
+				C352D9B220374DA100252317 /* Assets.xcassets in Resources */,
+				C352D9B520374DA100252317 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C37B88D020373CC2009211A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +202,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C352D99E20374DA100252317 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C35EDE3C203A39410069ADCF /* HPBallPulse.swift in Sources */,
+				C352D9BB20374E1C00252317 /* HPCircleLoader.swift in Sources */,
+				C352D9AD20374DA100252317 /* GameViewController.swift in Sources */,
+				C352D9A520374DA100252317 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C37B88CD20373CC2009211A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,7 +222,56 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		C352D9AE20374DA100252317 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C352D9AF20374DA100252317 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C352D9B320374DA100252317 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C352D9B420374DA100252317 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		C352D9B820374DA100252317 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FMYBNSCQ2F;
+				INFOPLIST_FILE = "Test Application/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.henrikpanhans.Test-Application";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C352D9B920374DA100252317 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FMYBNSCQ2F;
+				INFOPLIST_FILE = "Test Application/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.henrikpanhans.Test-Application";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C37B88D820373CC2009211A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -253,6 +388,7 @@
 		C37B88DB20373CC2009211A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -266,6 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.henrikpanhans.HPLoaders;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -274,6 +411,7 @@
 		C37B88DC20373CC2009211A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -295,6 +433,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C352D9B720374DA100252317 /* Build configuration list for PBXNativeTarget "Test Application" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C352D9B820374DA100252317 /* Debug */,
+				C352D9B920374DA100252317 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C37B88CC20373CC2009211A6 /* Build configuration list for PBXProject "HPLoaders" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
