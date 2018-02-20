@@ -15,6 +15,7 @@ class GameViewController: UIViewController {
     var hpView: HPCircleLoader!
     var hpBall: HPBallLoader!
     var hpWave: HPWaveLoader!
+    var hpPulse: HPSquarePulseLoader!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +23,21 @@ class GameViewController: UIViewController {
         hpView = HPCircleLoader(frame: CGRect(x: 0, y: 100, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
         self.view.addSubview(hpView)
         
-        hpBall = HPBallLoader(frame: CGRect(x: self.view.frame.width / 4, y: 100, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
+        hpBall = HPBallLoader(frame: CGRect(x: self.view.frame.width / 3, y: 100, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
         self.view.addSubview(hpBall)
         
-        hpWave = HPWaveLoader(frame: CGRect(x: self.view.frame.width / 2, y: 100, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
+        hpWave = HPWaveLoader(frame: CGRect(x: self.view.frame.width - self.view.frame.width / 4, y: 100, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
         self.view.addSubview(hpWave)
+        
+        hpPulse = HPSquarePulseLoader(frame: CGRect(x: 0, y: 300, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
+        self.view.addSubview(hpPulse)
     }
 
     @IBAction func start(_ sender: Any) {
-        hpView.startAnimating()
-        hpBall.startAnimating()
-        hpWave.startAnimating(with: 2, amplitude: .half)
+        hpView.startAnimating(with: 2)
+        hpBall.startAnimating(withDurations: 0.2, restore: 1.3)
+        hpWave.startAnimating(with: 1, amplitude: .half)
+        hpPulse.startAnimating(with: 8, contractionFactor: 0.5)
     }
     
     @IBAction func stop(_ sender: Any) {

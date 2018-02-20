@@ -21,6 +21,8 @@
 		C386E458203B4A540094F48F /* HPWaveLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386E454203B3DD20094F48F /* HPWaveLoader.swift */; };
 		C386E459203B4A5F0094F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C352D9B120374DA100252317 /* Assets.xcassets */; };
 		C386E45B203B4A820094F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C386E45A203B4A820094F48F /* Assets.xcassets */; };
+		C3CD3A51203C812B00C856A1 /* HPSquarePulseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */; };
+		C3CD3A52203C812F00C856A1 /* HPSquarePulseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,7 @@
 		C37B88D620373CC2009211A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C386E454203B3DD20094F48F /* HPWaveLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPWaveLoader.swift; sourceTree = "<group>"; };
 		C386E45A203B4A820094F48F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPSquarePulseLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,7 @@
 				C352D9BA20374E1C00252317 /* HPCircleLoader.swift */,
 				C35EDE3B203A39410069ADCF /* HPBallLoader.swift */,
 				C386E454203B3DD20094F48F /* HPWaveLoader.swift */,
+				C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */,
 				C37B88D520373CC2009211A6 /* HPLoaders.h */,
 				C37B88D620373CC2009211A6 /* Info.plist */,
 				C352D9B120374DA100252317 /* Assets.xcassets */,
@@ -219,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C35EDE3C203A39410069ADCF /* HPBallLoader.swift in Sources */,
+				C3CD3A52203C812F00C856A1 /* HPSquarePulseLoader.swift in Sources */,
 				C352D9BB20374E1C00252317 /* HPCircleLoader.swift in Sources */,
 				C352D9AD20374DA100252317 /* GameViewController.swift in Sources */,
 				C386E455203B3DD20094F48F /* HPWaveLoader.swift in Sources */,
@@ -231,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C386E456203B4A540094F48F /* HPCircleLoader.swift in Sources */,
+				C3CD3A51203C812B00C856A1 /* HPSquarePulseLoader.swift in Sources */,
 				C386E458203B4A540094F48F /* HPWaveLoader.swift in Sources */,
 				C386E457203B4A540094F48F /* HPBallLoader.swift in Sources */,
 			);
