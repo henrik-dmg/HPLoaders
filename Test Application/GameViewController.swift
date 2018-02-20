@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     var hpBall: HPBallLoader!
     var hpWave: HPWaveLoader!
     var hpPulse: HPSquarePulseLoader!
+    var hpBoxSlider: HPSlidingBoxLoader!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,25 +32,32 @@ class GameViewController: UIViewController {
         
         hpPulse = HPSquarePulseLoader(frame: CGRect(x: 0, y: 300, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
         self.view.addSubview(hpPulse)
+        
+        hpBoxSlider = HPSlidingBoxLoader(frame: CGRect(x: self.view.frame.width / 3, y: 300, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
+        self.view.addSubview(hpBoxSlider)
     }
 
     @IBAction func start(_ sender: Any) {
         hpView.startAnimating(with: 2)
         hpBall.startAnimating(withDurations: 0.2, restore: 1.3)
         hpWave.startAnimating(with: 1, amplitude: .half)
-        hpPulse.startAnimating(with: 8, contractionFactor: 0.5)
+        hpPulse.startAnimating(with: 8, contractionFactor: 0.2)
+        hpBoxSlider.startAnimating()
     }
     
     @IBAction func stop(_ sender: Any) {
         hpView.stopAnimating()
         hpBall.stopAnimating()
         hpWave.stopAnimating()
+        hpPulse.stopAnimating()
     }
     
     @IBAction func randomizeWave(_ sender: Any) {
-        hpBall.ball?.fillColor = .randomColor(type: .Red)
-        hpWave.numberOfDots = Int(arc4random_uniform(10) + 1)
+        hpBall.ball?.fillColor = .random
+        hpWave.numberOfDots = Int(arc4random_uniform(10) + 2)
         hpWave.dotColor = .random
+        hpView.ringColor = .random
+        hpPulse.dotColor = .random
     }
 
     override var prefersStatusBarHidden: Bool {

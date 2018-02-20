@@ -20,7 +20,6 @@ class HPSquarePulseLoader: SKView {
         }
     }
     
-    public var amplitude = WaveAmplitude.full
     public var numberOfDots = 3 {
         didSet {
             loaderScene?.makeDots()
@@ -56,28 +55,26 @@ class HPSquarePulseLoader: SKView {
 
 class HPSquarePulseScene: SKScene {
     
-    var dots = [SKShapeNode]()
-    var dotColor = UIColor.red {
-        didSet {
-            dots.forEach { (dot) in
-                dot.fillColor = dotColor
-            }
-        }
-    }
+    private var initialPositions = [CGPoint]()
+    public var dots = [SKShapeNode]()
     
     private var containerNode: SKSpriteNode?
     public var dotWidth: CGFloat = 10.00
     
     func makeDots() {
+        initialPositions.removeAll()
         containerNode?.removeFromParent()
         dots.removeAll()
         
         containerNode = SKSpriteNode(color: .clear, size: self.size)
         containerNode?.size = self.size
         containerNode?.position = CGPoint(x: 0, y: 0)
+        containerNode?.alpha = 0
         
         for i in 1...4 {
             let circle = SKShapeNode(circleOfRadius: dotWidth / 2)
+            circle.fillColor = .white
+            circle.lineWidth = 0
             switch i {
             case 1, 3:
                 if i == 1 {
@@ -95,6 +92,7 @@ class HPSquarePulseScene: SKScene {
                 break
             }
             
+            initialPositions.append(circle.position)
             containerNode!.addChild(circle)
             dots.append(circle)
         }
@@ -113,6 +111,7 @@ class HPSquarePulseScene: SKScene {
     }
     
     func startAnimating(with speed: TimeInterval = 8, contractionFactor: CGFloat) {
+        containerNode?.fadeIn()
         dots.forEach { (dot) in
             let initialPosition = dot.position
             let target = initialPosition.multiply(with: contractionFactor)
@@ -130,13 +129,20 @@ class HPSquarePulseScene: SKScene {
     }
     
     func stopAnimating() {
-        dots.forEach { (dot) in
-            dot.run(SKAction.fadeOut(withDuration: 0.5), completion: {
+        for i in 0...dots.count - 1 {
+            let dot = dots[i]
+            dot.run(SKAction.speed(to: 3, duration: 0.3), completion: {
                 dot.removeAllActions()
-                dot.position.y = 0
+                dot.position = self.initialPositions[i]
                 dot.speed = 1
             })
         }
+        containerNode?.fadeOut(0.3)
+        containerNode?.run(SKAction.speed(to: 3, duration: 0.3), completion: {
+            self.containerNode?.removeAllActions()
+            self.containerNode?.zRotation = 0
+            self.containerNode?.speed = 1
+        })
     }
 }
 

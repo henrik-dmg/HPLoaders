@@ -12,6 +12,14 @@ import SpriteKit
 class HPCircleLoader: SKView {
 
     private var loaderScene: HPCircleScene?
+    var ringColor: UIColor = UIColor.white {
+        didSet {
+            loaderScene?.circleNodes.forEach({ (node) in
+                node.color = ringColor
+                node.colorBlendFactor = 1
+            })
+        }
+    }
     
     func startAnimating(with cycleDuration: TimeInterval = 5) {
         loaderScene?.startAnimating(with: cycleDuration)
@@ -39,12 +47,14 @@ class HPCircleLoader: SKView {
 }
 
 class HPCircleScene: SKScene {
-    private var circleNodes = [SKSpriteNode]()
+    public var circleNodes = [SKSpriteNode]()
     
     override func didMove(to view: SKView) {
         for i in 0...4 {
             let texture = SKTexture(imageNamed: "circle-\(i)")
-            let node = SKSpriteNode(texture: texture, size: view.frame.size)
+            let node = SKSpriteNode.init(texture: texture, color: .white, size: self.size)
+            node.color = .white
+            node.colorBlendFactor = 1
             node.position = CGPoint(x: 0, y: 0)
             node.zRotation = CGFloat(Double.pi / 4)
             node.alpha = 0
@@ -53,20 +63,21 @@ class HPCircleScene: SKScene {
         }
     }
     
-    func startAnimating(with cycleDuration: TimeInterval = 3) {for i in 0...4 {
-        self.circleNodes[i].run(SKAction.fadeIn(withDuration: 0.5))
-        let action = SKAction.rotate(byAngle: CGFloat(Double.pi * 2), duration: cycleDuration / Double(i + 1))
-        self.circleNodes[i].run(SKAction.repeatForever(action), withKey: "rotation")
+    func startAnimating(with cycleDuration: TimeInterval = 3) {
+        for i in 0...4 {
+            self.circleNodes[i].run(SKAction.fadeIn(withDuration: 0.5))
+            let action = SKAction.rotate(byAngle: CGFloat(Double.pi * 2), duration: cycleDuration / Double(i + 1))
+            self.circleNodes[i].run(SKAction.repeatForever(action), withKey: "rotation")
         }
     }
     
     func stopAnimating() {
-        for i in 0...4 {
-            self.circleNodes[i].run(SKAction.speed(to: 3, duration: 0.25))
-            self.circleNodes[i].run(SKAction.fadeOut(withDuration: 0.5), completion: {
-                self.circleNodes[i].removeAllActions()
-                self.circleNodes[i].speed = 1
-                self.circleNodes[i].zRotation = CGFloat(Double.pi / 4)
+        circleNodes.forEach { (node) in
+            node.run(SKAction.speed(to: 3, duration: 0.25))
+            node.run(SKAction.fadeOut(withDuration: 0.5), completion: {
+                node.removeAllActions()
+                node.speed = 1
+                node.zRotation = CGFloat(Double.pi / 4)
             })
         }
     }

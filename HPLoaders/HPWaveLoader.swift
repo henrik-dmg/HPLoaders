@@ -18,7 +18,7 @@ enum WaveAmplitude: Int {
 class HPWaveLoader: SKView {
     
     private var loaderScene: HPWaveScene?
-    public var dotColor = UIColor.darkGray {
+    public var dotColor = UIColor.white {
         didSet {
             loaderScene?.dots.forEach({ (dot) in
                 dot.fillColor = dotColor
@@ -64,7 +64,7 @@ class HPWaveScene: SKScene {
     
     var dots = [SKShapeNode]()
     var numberOfDots = 5
-    var dotColor = UIColor.red {
+    var dotColor = UIColor.white {
         didSet {
             dots.forEach { (dot) in
                 dot.fillColor = dotColor

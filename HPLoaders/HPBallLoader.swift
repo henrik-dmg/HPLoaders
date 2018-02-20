@@ -31,7 +31,6 @@ class HPBallLoader: SKView {
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         loaderScene = scene
         ball = scene.ball
-        ball?.fillColor = .red
         self.presentScene(scene)
         
         
@@ -53,7 +52,7 @@ class HPBallScene: SKScene {
         ball = SKShapeNode(circleOfRadius: size.width / 2)
         ball.position = CGPoint(x: 0, y: 0)
         ball.alpha = 0
-        ball.fillColor = .cyan
+        ball.fillColor = .white
         ball.lineWidth = 0
         ball.setScale(0.7)
         
