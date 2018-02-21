@@ -9,20 +9,14 @@
 import Foundation
 import SpriteKit
 
-class HPSquarePulseLoader: SKView {
+@IBDesignable class HPSquarePulseLoader: SKView {
     
     private var loaderScene: HPSquarePulseScene?
-    public var dotColor = UIColor.darkGray {
+    @IBInspectable var dotColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.dots.forEach({ (dot) in
                 dot.fillColor = dotColor
             })
-        }
-    }
-    
-    public var numberOfDots = 3 {
-        didSet {
-            loaderScene?.makeDots()
         }
     }
     
@@ -34,22 +28,25 @@ class HPSquarePulseLoader: SKView {
         loaderScene?.stopAnimating()
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    func setupScene() {
         let scene = HPSquarePulseScene(size: frame.size)
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .clear
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         loaderScene = scene
         self.presentScene(scene)
-        
-        
         self.ignoresSiblingOrder = true
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupScene()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setupScene()
     }
 }
 

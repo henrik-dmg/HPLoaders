@@ -9,38 +9,53 @@
 import UIKit
 import SpriteKit
 
-class HPSlidingBoxLoader: SKView {
+@IBDesignable class HPSlidingBoxLoader: SKView {
     
     private var loaderScene: HPSlidingBoxScene?
     
-    func startAnimating(withDurations pulse: TimeInterval = 0.3, restore: TimeInterval = 1) {
-        loaderScene?.startAnimating(withDurations: pulse, restore: restore)
+    @IBInspectable var boxColor: UIColor = UIColor.white {
+        didSet {
+            loaderScene?.boxColor = boxColor
+        }
+    }
+    
+    func startAnimating() {
+        loaderScene?.startAnimating()
     }
     
     func stopAnimating() {
         loaderScene?.stopAnimating()
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    func setupScene() {
         let scene = HPSlidingBoxScene(size: frame.size)
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .clear
         scene.anchorPoint = CGPoint(x: 0, y: 0.5)
         loaderScene = scene
         self.presentScene(scene)
-        
-        
         self.ignoresSiblingOrder = true
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupScene()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setupScene()
     }
 }
 
 class HPSlidingBoxScene: SKScene {
+    
+    public var boxColor = UIColor.white {
+        didSet {
+            setupScene()
+        }
+    }
     
     var boxes = [SKShapeNode]()
     var i: Int = 0
@@ -64,24 +79,34 @@ class HPSlidingBoxScene: SKScene {
         }
         boxes.removeAll()
         
+        let boxSize = CGSize(width: (self.scene!.size.width) / 9, height: (self.scene!.size.width) / 9)
+        boxHeight = Int(boxSize.height)
+        
         for i in 0...4 {
-            let boxSize = CGSize(width: (self.scene!.size.width) / 9, height: (self.scene!.size.width) / 9)
-            boxHeight = Int(boxSize.height)
             let square = SKShapeNode(rectOf: boxSize, cornerRadius: boxSize.height / 4)
             if i == 0 {
-                square.fillColor = .white
+                square.fillColor = boxColor
             }
             
-            square.position = CGPoint(x: Int((boxSize.width / 2) + (boxSize.width * 2 * CGFloat(i))), y: 0)
+            square.strokeColor = boxColor
+            square.alpha = 0
+            square.position = CGPoint(x: (boxSize.width / 2) + (boxSize.width * 2 * CGFloat(i)), y: 0)
             self.addChild(square)
             boxes.append(square)
             xPositions.append(square.position.x)
         }
     }
     
-    func startAnimating(withDurations pulse: TimeInterval = 0.5, restore: TimeInterval = 1) {
+    func startAnimating() {
         i = 0
-        self.boxes[self.i].fillColor = .white
+        boxes.forEach { (box) in
+            box.fadeIn()
+            if box.position.x == self.xPositions[0] {
+                box.fillColor = boxColor
+            } else {
+                box.fillColor = .clear
+            }
+        }
         
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(iterateThroughBoxes), userInfo: nil, repeats: true)
     }
@@ -94,7 +119,7 @@ class HPSlidingBoxScene: SKScene {
                 firstNode.fillColor = .clear
                 self.i += 1
                 if let nextNode = self.atPoint(CGPoint(x: self.xPositions[self.i], y: 0)) as? SKShapeNode {
-                    nextNode.fillColor = .white
+                    nextNode.fillColor = boxColor
                 }
             }
         }
@@ -121,7 +146,17 @@ class HPSlidingBoxScene: SKScene {
     }
     
     func stopAnimating() {
-        
+        timer?.invalidate()
+        i = 0
+        boxes.forEach { (box) in
+            box.run(SKAction.fadeOut(withDuration: 0.5), completion: {
+                if box.position.x == self.xPositions[0] {
+                    box.fillColor = self.boxColor
+                } else {
+                    box.fillColor = .clear
+                }
+            })
+        }
     }
 }
 

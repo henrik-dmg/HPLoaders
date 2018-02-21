@@ -9,10 +9,10 @@
 import UIKit
 import SpriteKit
 
-class HPCircleLoader: SKView {
+@IBDesignable class HPCircleLoader: SKView {
 
     private var loaderScene: HPCircleScene?
-    var ringColor: UIColor = UIColor.white {
+    @IBInspectable var ringColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.circleNodes.forEach({ (node) in
                 node.color = ringColor
@@ -29,9 +29,7 @@ class HPCircleLoader: SKView {
         loaderScene?.stopAnimating()
     }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    func setupScene() {
         let scene = HPCircleScene(size: frame.size)
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .clear
@@ -41,8 +39,15 @@ class HPCircleLoader: SKView {
         self.ignoresSiblingOrder = true
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupScene()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setupScene()
     }
 }
 

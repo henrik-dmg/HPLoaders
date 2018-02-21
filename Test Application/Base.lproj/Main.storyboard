@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,21 +40,123 @@
                                     <action selector="randomizeWave:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Bgw-Rq-5Yg"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuV-x4-6BZ" customClass="HPBallLoader" customModule="Test_Application" customModuleProvider="target">
+                                <rect key="frame" x="135.5" y="20" width="104" height="103.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JuV-x4-6BZ" secondAttribute="height" multiplier="1:1" id="DhJ-CN-fI4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ballColor">
+                                        <color key="value" red="0.97647058819999999" green="0.72156862749999995" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNo-dI-POH" customClass="HPWaveLoader" customModule="Test_Application" customModuleProvider="target">
+                                <rect key="frame" x="263.5" y="20" width="103.5" height="103.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iNo-dI-POH" secondAttribute="height" multiplier="1:1" id="xPJ-Nc-tn2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="dotColor">
+                                        <color key="value" red="0.90980392160000001" green="0.22352941179999999" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfDots">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4l4-el-kDz" customClass="HPProgressLoader" customModule="HPLoaders">
+                                <rect key="frame" x="263" y="147.5" width="103.5" height="103.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4l4-el-kDz" secondAttribute="height" multiplier="1:1" id="rlY-jo-TWh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22B-W6-tup" customClass="HPSlidingBoxLoader" customModule="Test_Application" customModuleProvider="target">
+                                <rect key="frame" x="135.5" y="147.5" width="104" height="103.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="22B-W6-tup" secondAttribute="height" multiplier="1:1" id="6w6-no-omX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="boxColor">
+                                        <color key="value" red="0.9767052531" green="0.60546392199999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3x-MV-y5D" customClass="HPSquarePulseLoader" customModule="Test_Application" customModuleProvider="target">
+                                <rect key="frame" x="8" y="147.5" width="103.5" height="103.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="E3x-MV-y5D" secondAttribute="height" multiplier="1:1" id="xdh-bA-Ol9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="dotColor">
+                                        <color key="value" red="0.0" green="0.63921568630000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkS-wi-JsN" customClass="HPCircleLoader" customModule="Test_Application" customModuleProvider="target">
+                                <rect key="frame" x="8" y="20" width="103.5" height="103.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VkS-wi-JsN" secondAttribute="height" multiplier="1:1" id="a7M-pV-fNV"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ringColor">
+                                        <color key="value" red="0.96862745100000003" green="0.3294117647" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="22B-W6-tup" firstAttribute="leading" secondItem="E3x-MV-y5D" secondAttribute="trailing" constant="24" id="1PH-hC-LLJ"/>
+                            <constraint firstItem="E3x-MV-y5D" firstAttribute="width" secondItem="VkS-wi-JsN" secondAttribute="width" id="27c-kC-nEk"/>
+                            <constraint firstItem="4l4-el-kDz" firstAttribute="width" secondItem="VkS-wi-JsN" secondAttribute="width" id="3Lf-mr-9JX"/>
+                            <constraint firstItem="JuV-x4-6BZ" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="3Z1-vI-VJn"/>
+                            <constraint firstItem="JuV-x4-6BZ" firstAttribute="width" secondItem="VkS-wi-JsN" secondAttribute="width" id="4nI-3f-YN4"/>
+                            <constraint firstItem="E3x-MV-y5D" firstAttribute="top" secondItem="VkS-wi-JsN" secondAttribute="bottom" constant="24" id="5nd-Xo-IGl"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Fb6-nC-DDP" secondAttribute="bottom" constant="24" id="6cV-ZF-Tou"/>
                             <constraint firstItem="YKP-HO-cxl" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="8d1-7D-qIe"/>
+                            <constraint firstItem="22B-W6-tup" firstAttribute="width" secondItem="VkS-wi-JsN" secondAttribute="width" id="8os-ZN-bPm"/>
+                            <constraint firstItem="E3x-MV-y5D" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="8" id="El2-UK-F97"/>
+                            <constraint firstItem="22B-W6-tup" firstAttribute="top" secondItem="JuV-x4-6BZ" secondAttribute="bottom" constant="24" id="H5G-qK-7N6"/>
+                            <constraint firstItem="E3x-MV-y5D" firstAttribute="height" secondItem="VkS-wi-JsN" secondAttribute="height" id="IJI-nI-cKL"/>
+                            <constraint firstItem="VkS-wi-JsN" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="Icg-cn-MdS"/>
+                            <constraint firstItem="4l4-el-kDz" firstAttribute="top" secondItem="iNo-dI-POH" secondAttribute="bottom" constant="24" id="Izu-LM-lYZ"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="4l4-el-kDz" secondAttribute="trailing" constant="8" id="KEH-68-8aR"/>
+                            <constraint firstItem="iNo-dI-POH" firstAttribute="width" secondItem="VkS-wi-JsN" secondAttribute="width" id="P6B-zM-WmB"/>
+                            <constraint firstItem="iNo-dI-POH" firstAttribute="height" secondItem="VkS-wi-JsN" secondAttribute="height" id="VCT-pY-ZD6"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="WHb-ki-eGK" secondAttribute="trailing" constant="16" id="Vgg-if-OR6"/>
+                            <constraint firstItem="iNo-dI-POH" firstAttribute="leading" secondItem="JuV-x4-6BZ" secondAttribute="trailing" constant="24" id="XAN-Qo-1GT"/>
+                            <constraint firstItem="22B-W6-tup" firstAttribute="height" secondItem="VkS-wi-JsN" secondAttribute="height" id="Y8C-2u-HJn"/>
+                            <constraint firstItem="iNo-dI-POH" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="ZEV-YZ-UXt"/>
+                            <constraint firstItem="4l4-el-kDz" firstAttribute="leading" secondItem="22B-W6-tup" secondAttribute="trailing" constant="24" id="awm-n0-77B"/>
                             <constraint firstItem="Fb6-nC-DDP" firstAttribute="top" secondItem="YKP-HO-cxl" secondAttribute="bottom" constant="24" id="bjx-zo-TUn"/>
+                            <constraint firstItem="4l4-el-kDz" firstAttribute="height" secondItem="VkS-wi-JsN" secondAttribute="height" id="f4t-BN-bQL"/>
+                            <constraint firstItem="JuV-x4-6BZ" firstAttribute="leading" secondItem="VkS-wi-JsN" secondAttribute="trailing" constant="24" id="hSc-RJ-qL1"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="iNo-dI-POH" secondAttribute="trailing" constant="8" id="k75-48-Wdx"/>
+                            <constraint firstItem="JuV-x4-6BZ" firstAttribute="height" secondItem="VkS-wi-JsN" secondAttribute="height" id="oYr-Ry-Y5q"/>
+                            <constraint firstItem="VkS-wi-JsN" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="8" id="xP5-iU-F5q"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="WHb-ki-eGK" secondAttribute="bottom" constant="24" id="xTD-Yf-KhW"/>
                             <constraint firstItem="Fb6-nC-DDP" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="zpr-Eh-jf4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <connections>
+                        <outlet property="hpBall" destination="JuV-x4-6BZ" id="zf9-U8-cWK"/>
+                        <outlet property="hpBoxSlider" destination="22B-W6-tup" id="O0p-o1-MFx"/>
+                        <outlet property="hpPulse" destination="E3x-MV-y5D" id="V0m-bW-Bdl"/>
+                        <outlet property="hpView" destination="VkS-wi-JsN" id="8Ib-vO-4fj"/>
+                        <outlet property="hpWave" destination="iNo-dI-POH" id="8oX-Kn-hnw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

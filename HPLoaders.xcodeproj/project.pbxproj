@@ -25,6 +25,7 @@
 		C386E45B203B4A820094F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C386E45A203B4A820094F48F /* Assets.xcassets */; };
 		C3CD3A51203C812B00C856A1 /* HPSquarePulseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */; };
 		C3CD3A52203C812F00C856A1 /* HPSquarePulseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */; };
+		C3F3EA98203DD2D90091165A /* HPProgressLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,9 @@
 		C386E454203B3DD20094F48F /* HPWaveLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPWaveLoader.swift; sourceTree = "<group>"; };
 		C386E45A203B4A820094F48F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPSquarePulseLoader.swift; sourceTree = "<group>"; };
+		C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPProgressLoader.swift; sourceTree = "<group>"; };
+		C3F3EA99203DD4080091165A /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
+		C3F3EA9A203DD41A0091165A /* LoaderActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoaderActions.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,9 @@
 				C386E454203B3DD20094F48F /* HPWaveLoader.swift */,
 				C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */,
 				C365438C203CC85D00495357 /* HPSlidingBoxLoader.swift */,
+				C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */,
+				C3F3EA99203DD4080091165A /* MyScene.sks */,
+				C3F3EA9A203DD41A0091165A /* LoaderActions.sks */,
 				C37B88D520373CC2009211A6 /* HPLoaders.h */,
 				C37B88D620373CC2009211A6 /* Info.plist */,
 				C352D9B120374DA100252317 /* Assets.xcassets */,
@@ -243,6 +250,7 @@
 				C365438D203CC85D00495357 /* HPSlidingBoxLoader.swift in Sources */,
 				C386E456203B4A540094F48F /* HPCircleLoader.swift in Sources */,
 				C3CD3A51203C812B00C856A1 /* HPSquarePulseLoader.swift in Sources */,
+				C3F3EA98203DD2D90091165A /* HPProgressLoader.swift in Sources */,
 				C386E458203B4A540094F48F /* HPWaveLoader.swift in Sources */,
 				C386E457203B4A540094F48F /* HPBallLoader.swift in Sources */,
 			);

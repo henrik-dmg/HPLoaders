@@ -12,36 +12,21 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
-    var hpView: HPCircleLoader!
-    var hpBall: HPBallLoader!
-    var hpWave: HPWaveLoader!
-    var hpPulse: HPSquarePulseLoader!
-    var hpBoxSlider: HPSlidingBoxLoader!
+    @IBOutlet var hpView: HPCircleLoader!
+    @IBOutlet var hpBall: HPBallLoader!
+    @IBOutlet var hpWave: HPWaveLoader!
+    @IBOutlet var hpPulse: HPSquarePulseLoader!
+    @IBOutlet var hpBoxSlider: HPSlidingBoxLoader!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        hpView = HPCircleLoader(frame: CGRect(x: 0, y: 100, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
-        self.view.addSubview(hpView)
-        
-        hpBall = HPBallLoader(frame: CGRect(x: self.view.frame.width / 3, y: 100, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
-        self.view.addSubview(hpBall)
-        
-        hpWave = HPWaveLoader(frame: CGRect(x: self.view.frame.width - self.view.frame.width / 4, y: 100, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
-        self.view.addSubview(hpWave)
-        
-        hpPulse = HPSquarePulseLoader(frame: CGRect(x: 0, y: 300, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
-        self.view.addSubview(hpPulse)
-        
-        hpBoxSlider = HPSlidingBoxLoader(frame: CGRect(x: self.view.frame.width / 3, y: 300, width: self.view.frame.width / 4, height: self.view.frame.width / 4))
-        self.view.addSubview(hpBoxSlider)
     }
 
     @IBAction func start(_ sender: Any) {
-        hpView.startAnimating(with: 2)
+        hpView.startAnimating(with: 4)
         hpBall.startAnimating(withDurations: 0.2, restore: 1.3)
-        hpWave.startAnimating(with: 1, amplitude: .half)
-        hpPulse.startAnimating(with: 8, contractionFactor: 0.2)
+        hpWave.startAnimating(with: 3, amplitude: .full)
+        hpPulse.startAnimating(with: 8, contractionFactor: 0.8)
         hpBoxSlider.startAnimating()
     }
     
@@ -50,10 +35,11 @@ class GameViewController: UIViewController {
         hpBall.stopAnimating()
         hpWave.stopAnimating()
         hpPulse.stopAnimating()
+        hpBoxSlider.stopAnimating()
     }
     
     @IBAction func randomizeWave(_ sender: Any) {
-        hpBall.ball?.fillColor = .random
+        hpBall.ballColor = .random
         hpWave.numberOfDots = Int(arc4random_uniform(10) + 2)
         hpWave.dotColor = .random
         hpView.ringColor = .random

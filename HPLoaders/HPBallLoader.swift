@@ -9,10 +9,14 @@
 import UIKit
 import SpriteKit
 
-class HPBallLoader: SKView {
+@IBDesignable class HPBallLoader: SKView {
     
     private var loaderScene: HPBallScene?
-    public var ball: SKShapeNode?
+    @IBInspectable var ballColor: UIColor = UIColor.white {
+        didSet {
+            loaderScene?.ball.fillColor = ballColor
+        }
+    }
     
     func startAnimating(withDurations pulse: TimeInterval = 0.3, restore: TimeInterval = 1) {
         loaderScene?.startAnimating(withDurations: pulse, restore: restore)
@@ -22,23 +26,25 @@ class HPBallLoader: SKView {
         loaderScene?.stopAnimating()
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    func setupScene() {
         let scene = HPBallScene(size: frame.size)
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .clear
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         loaderScene = scene
-        ball = scene.ball
         self.presentScene(scene)
-        
-        
         self.ignoresSiblingOrder = true
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupScene()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setupScene()
     }
 }
 

@@ -9,25 +9,23 @@
 import UIKit
 import SpriteKit
 
-enum WaveAmplitude: Int {
+@objc enum WaveAmplitude: Int {
     case full = 2;
     case half = 4;
     case quarter = 8;
 }
 
-class HPWaveLoader: SKView {
+@IBDesignable class HPWaveLoader: SKView {
     
     private var loaderScene: HPWaveScene?
-    public var dotColor = UIColor.white {
+    @IBInspectable var dotColor: UIColor = UIColor.white {
         didSet {
-            loaderScene?.dots.forEach({ (dot) in
-                dot.fillColor = dotColor
-            })
+            loaderScene?.dotColor = dotColor
         }
     }
     
-    public var amplitude = WaveAmplitude.full
-    public var numberOfDots = 3 {
+    @IBInspectable var amplitude: WaveAmplitude = WaveAmplitude.full
+    @IBInspectable var numberOfDots: Int = 3 {
         didSet {
             loaderScene?.makeDots(count: numberOfDots)
         }
@@ -41,22 +39,25 @@ class HPWaveLoader: SKView {
         loaderScene?.stopAnimating()
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    func setupScene() {
         let scene = HPWaveScene(size: frame.size)
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .clear
         scene.anchorPoint = CGPoint(x: 0, y: 0.5)
         loaderScene = scene
         self.presentScene(scene)
-        
-        
         self.ignoresSiblingOrder = true
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupScene()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setupScene()
     }
 }
 
