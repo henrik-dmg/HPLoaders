@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C332CD43203DE28F0037FE48 /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C332CD42203DE28F0037FE48 /* Resources.xcassets */; };
+		C332CD44203DE28F0037FE48 /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C332CD42203DE28F0037FE48 /* Resources.xcassets */; };
 		C352D9A520374DA100252317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9A420374DA100252317 /* AppDelegate.swift */; };
 		C352D9AD20374DA100252317 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9AC20374DA100252317 /* GameViewController.swift */; };
 		C352D9B020374DA100252317 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C352D9AE20374DA100252317 /* Main.storyboard */; };
-		C352D9B220374DA100252317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C352D9B120374DA100252317 /* Assets.xcassets */; };
 		C352D9B520374DA100252317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C352D9B320374DA100252317 /* LaunchScreen.storyboard */; };
-		C352D9BB20374E1C00252317 /* HPCircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9BA20374E1C00252317 /* HPCircleLoader.swift */; };
-		C35EDE3C203A39410069ADCF /* HPBallLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EDE3B203A39410069ADCF /* HPBallLoader.swift */; };
 		C365438D203CC85D00495357 /* HPSlidingBoxLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365438C203CC85D00495357 /* HPSlidingBoxLoader.swift */; };
-		C365438E203CC85D00495357 /* HPSlidingBoxLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365438C203CC85D00495357 /* HPSlidingBoxLoader.swift */; };
 		C37B88D720373CC2009211A6 /* HPLoaders.h in Headers */ = {isa = PBXBuildFile; fileRef = C37B88D520373CC2009211A6 /* HPLoaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C386E455203B3DD20094F48F /* HPWaveLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386E454203B3DD20094F48F /* HPWaveLoader.swift */; };
 		C386E456203B4A540094F48F /* HPCircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9BA20374E1C00252317 /* HPCircleLoader.swift */; };
 		C386E457203B4A540094F48F /* HPBallLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EDE3B203A39410069ADCF /* HPBallLoader.swift */; };
 		C386E458203B4A540094F48F /* HPWaveLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386E454203B3DD20094F48F /* HPWaveLoader.swift */; };
-		C386E459203B4A5F0094F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C352D9B120374DA100252317 /* Assets.xcassets */; };
 		C386E45B203B4A820094F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C386E45A203B4A820094F48F /* Assets.xcassets */; };
 		C3CD3A51203C812B00C856A1 /* HPSquarePulseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */; };
-		C3CD3A52203C812F00C856A1 /* HPSquarePulseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */; };
-		C3F3EA98203DD2D90091165A /* HPProgressLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */; };
+		C3FE4AF2203DDD47005F5DB6 /* HPCircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9BA20374E1C00252317 /* HPCircleLoader.swift */; };
+		C3FE4AF3203DDD47005F5DB6 /* HPBallLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EDE3B203A39410069ADCF /* HPBallLoader.swift */; };
+		C3FE4AF4203DDD47005F5DB6 /* HPWaveLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386E454203B3DD20094F48F /* HPWaveLoader.swift */; };
+		C3FE4AF5203DDD47005F5DB6 /* HPSquarePulseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */; };
+		C3FE4AF6203DDD47005F5DB6 /* HPSlidingBoxLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365438C203CC85D00495357 /* HPSlidingBoxLoader.swift */; };
+		C3FE4AF7203DDD47005F5DB6 /* HPProgressLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C332CD42203DE28F0037FE48 /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
 		C352D9A220374DA100252317 /* Test Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C352D9A420374DA100252317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C352D9AC20374DA100252317 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		C352D9AF20374DA100252317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C352D9B120374DA100252317 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C352D9B420374DA100252317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C352D9B620374DA100252317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C352D9BA20374E1C00252317 /* HPCircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPCircleLoader.swift; sourceTree = "<group>"; };
@@ -46,8 +46,6 @@
 		C386E45A203B4A820094F48F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPSquarePulseLoader.swift; sourceTree = "<group>"; };
 		C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPProgressLoader.swift; sourceTree = "<group>"; };
-		C3F3EA99203DD4080091165A /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
-		C3F3EA9A203DD41A0091165A /* LoaderActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoaderActions.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +69,7 @@
 		C352D9A320374DA100252317 /* Test Application */ = {
 			isa = PBXGroup;
 			children = (
+				C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */,
 				C352D9A420374DA100252317 /* AppDelegate.swift */,
 				C352D9AC20374DA100252317 /* GameViewController.swift */,
 				C352D9AE20374DA100252317 /* Main.storyboard */,
@@ -107,12 +106,9 @@
 				C386E454203B3DD20094F48F /* HPWaveLoader.swift */,
 				C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */,
 				C365438C203CC85D00495357 /* HPSlidingBoxLoader.swift */,
-				C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */,
-				C3F3EA99203DD4080091165A /* MyScene.sks */,
-				C3F3EA9A203DD41A0091165A /* LoaderActions.sks */,
 				C37B88D520373CC2009211A6 /* HPLoaders.h */,
 				C37B88D620373CC2009211A6 /* Info.plist */,
-				C352D9B120374DA100252317 /* Assets.xcassets */,
+				C332CD42203DE28F0037FE48 /* Resources.xcassets */,
 			);
 			path = HPLoaders;
 			sourceTree = "<group>";
@@ -212,9 +208,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C352D9B020374DA100252317 /* Main.storyboard in Resources */,
-				C352D9B220374DA100252317 /* Assets.xcassets in Resources */,
 				C386E45B203B4A820094F48F /* Assets.xcassets in Resources */,
 				C352D9B520374DA100252317 /* LaunchScreen.storyboard in Resources */,
+				C332CD44203DE28F0037FE48 /* Resources.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C386E459203B4A5F0094F48F /* Assets.xcassets in Resources */,
+				C332CD43203DE28F0037FE48 /* Resources.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,13 +229,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C35EDE3C203A39410069ADCF /* HPBallLoader.swift in Sources */,
-				C3CD3A52203C812F00C856A1 /* HPSquarePulseLoader.swift in Sources */,
-				C365438E203CC85D00495357 /* HPSlidingBoxLoader.swift in Sources */,
-				C352D9BB20374E1C00252317 /* HPCircleLoader.swift in Sources */,
+				C3FE4AF2203DDD47005F5DB6 /* HPCircleLoader.swift in Sources */,
+				C3FE4AF5203DDD47005F5DB6 /* HPSquarePulseLoader.swift in Sources */,
+				C3FE4AF6203DDD47005F5DB6 /* HPSlidingBoxLoader.swift in Sources */,
 				C352D9AD20374DA100252317 /* GameViewController.swift in Sources */,
-				C386E455203B3DD20094F48F /* HPWaveLoader.swift in Sources */,
 				C352D9A520374DA100252317 /* AppDelegate.swift in Sources */,
+				C3FE4AF7203DDD47005F5DB6 /* HPProgressLoader.swift in Sources */,
+				C3FE4AF4203DDD47005F5DB6 /* HPWaveLoader.swift in Sources */,
+				C3FE4AF3203DDD47005F5DB6 /* HPBallLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +247,6 @@
 				C365438D203CC85D00495357 /* HPSlidingBoxLoader.swift in Sources */,
 				C386E456203B4A540094F48F /* HPCircleLoader.swift in Sources */,
 				C3CD3A51203C812B00C856A1 /* HPSquarePulseLoader.swift in Sources */,
-				C3F3EA98203DD2D90091165A /* HPProgressLoader.swift in Sources */,
 				C386E458203B4A540094F48F /* HPWaveLoader.swift in Sources */,
 				C386E457203B4A540094F48F /* HPBallLoader.swift in Sources */,
 			);
@@ -434,6 +430,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = HPLoaders/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.henrikpanhans.HPLoaders;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -457,6 +454,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = HPLoaders/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.henrikpanhans.HPLoaders;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
