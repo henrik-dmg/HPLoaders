@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   s.source_files = "HPLoaders", "HPLoaders/*.{plist,h,swift}"
 
   s.requires_arc = true
-  s.resources.resource_bundle = {'Resources' => ['HPLoaders/**/*.{pdf}']}
+  s.resources = "HPLoaders/*.{xcassets}"
   s.framework  = "SpriteKit"
 
 end
