@@ -23,10 +23,10 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func start(_ sender: Any) {
-        hpView.startAnimating(with: 4)
-        hpBall.startAnimating(withDurations: 0.2, restore: 1.3)
-        hpWave.startAnimating(with: 3, amplitude: .full)
-        hpPulse.startAnimating(with: 8, contractionFactor: 0.8)
+        hpView.startAnimating(with: 3.5)
+        hpBall.startAnimating(withDurations: 0.4, restore: 1.35)
+        hpWave.startAnimating(with: 3.5, amplitude: .full)
+        hpPulse.startAnimating(with: 14, contractionFactor: 0.8)
         hpBoxSlider.startAnimating()
     }
     

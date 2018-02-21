@@ -128,7 +128,7 @@ class HPSlidingBoxScene: SKScene {
     private func shiftBoxes() {
         timer?.invalidate()
         if let firstNode = self.atPoint(CGPoint(x: self.xPositions[self.i], y: 0)) as? SKShapeNode {
-            let moveUp = SKAction.moveBy(x: 0, y: CGFloat(self.boxHeight + 10), duration: 0.3)
+            let moveUp = SKAction.moveBy(x: 0, y: CGFloat(self.boxHeight + 10), duration: 0.25)
             let moveToBeginning = SKAction.moveTo(x: xPositions[0], duration: 0.5)
             let moveDown = moveUp.reversed()
             let sequence = SKAction.sequence([moveUp, moveToBeginning, moveDown])
@@ -139,7 +139,7 @@ class HPSlidingBoxScene: SKScene {
             
             for i in 0...boxes.count - 2 {
                 if let firstNode = self.atPoint(CGPoint(x: self.xPositions[i], y: 0)) as? SKShapeNode {
-                    firstNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.3), SKAction.moveTo(x: self.xPositions[i + 1], duration: 0.3)]))
+                    firstNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.25), SKAction.moveTo(x: self.xPositions[i + 1], duration: 0.3)]))
                 }
             }
         }
