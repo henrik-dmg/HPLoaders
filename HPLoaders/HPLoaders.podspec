@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HPLoaders"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Collection of custom loaders powered by SpriteKit"
 
   s.homepage     = "https://facebook.com/HPanhans"
