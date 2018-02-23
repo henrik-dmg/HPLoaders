@@ -30,10 +30,9 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => 'https://github.com/Fri3ndlyGerman/HPLoaders.git', :tag => "1.0.0" }
 
-  s.source_files = "HPLoaders", "HPLoaders/*.{plist,h,swift}"
+  s.source_files = "HPLoaders", "*.{plist,h,swift}"
   s.swift_version = "4.0"
   s.requires_arc = true
-  s.resources = "HPLoaders/*.{xcassets}"
   s.framework  = "SpriteKit"
 
 end

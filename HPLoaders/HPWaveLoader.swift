@@ -9,33 +9,33 @@
 import UIKit
 import SpriteKit
 
-@objc enum WaveAmplitude: Int {
+@objc public enum WaveAmplitude: Int {
     case full = 2;
     case half = 4;
     case quarter = 8;
 }
 
-@IBDesignable class HPWaveLoader: SKView {
+@IBDesignable public class HPWaveLoader: SKView {
     
     private var loaderScene: HPWaveScene?
-    @IBInspectable var dotColor: UIColor = UIColor.white {
+    @IBInspectable public var dotColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.dotColor = dotColor
         }
     }
     
-    @IBInspectable var amplitude: WaveAmplitude = WaveAmplitude.full
-    @IBInspectable var numberOfDots: Int = 3 {
+    @IBInspectable public var amplitude: WaveAmplitude = WaveAmplitude.full
+    @IBInspectable public var numberOfDots: Int = 3 {
         didSet {
             loaderScene?.makeDots(count: numberOfDots)
         }
     }
     
-    func startAnimating(with waveSpeed: TimeInterval = 3, amplitude: WaveAmplitude = .full) {
+    public func startAnimating(with waveSpeed: TimeInterval = 3, amplitude: WaveAmplitude = .full) {
         loaderScene?.startAnimating(with: waveSpeed, amplitude: amplitude)
     }
     
-    func stopAnimating() {
+    public func stopAnimating() {
         loaderScene?.stopAnimating()
     }
     
@@ -55,7 +55,7 @@ import SpriteKit
         setupScene()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupScene()
     }

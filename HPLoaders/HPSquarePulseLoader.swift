@@ -9,10 +9,10 @@
 import Foundation
 import SpriteKit
 
-@IBDesignable class HPSquarePulseLoader: SKView {
+@IBDesignable public class HPSquarePulseLoader: SKView {
     
     private var loaderScene: HPSquarePulseScene?
-    @IBInspectable var dotColor: UIColor = UIColor.white {
+    @IBInspectable public var dotColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.dots.forEach({ (dot) in
                 dot.fillColor = dotColor
@@ -20,11 +20,11 @@ import SpriteKit
         }
     }
     
-    func startAnimating(with speed: TimeInterval, contractionFactor: CGFloat) {
+    public func startAnimating(with speed: TimeInterval, contractionFactor: CGFloat) {
         loaderScene?.startAnimating(with: speed, contractionFactor: contractionFactor)
     }
     
-    func stopAnimating() {
+    public func stopAnimating() {
         loaderScene?.stopAnimating()
     }
     
@@ -44,7 +44,7 @@ import SpriteKit
         setupScene()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupScene()
     }

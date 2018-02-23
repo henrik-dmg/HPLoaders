@@ -9,21 +9,21 @@
 import UIKit
 import SpriteKit
 
-@IBDesignable class HPSlidingBoxLoader: SKView {
+@IBDesignable public class HPSlidingBoxLoader: SKView {
     
     private var loaderScene: HPSlidingBoxScene?
     
-    @IBInspectable var boxColor: UIColor = UIColor.white {
+    @IBInspectable public var boxColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.boxColor = boxColor
         }
     }
     
-    func startAnimating() {
+    public func startAnimating() {
         loaderScene?.startAnimating()
     }
     
-    func stopAnimating() {
+    public func stopAnimating() {
         loaderScene?.stopAnimating()
     }
     
@@ -43,7 +43,7 @@ import SpriteKit
         setupScene()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupScene()
     }

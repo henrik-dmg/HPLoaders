@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C332CD43203DE28F0037FE48 /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C332CD42203DE28F0037FE48 /* Resources.xcassets */; };
-		C332CD44203DE28F0037FE48 /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C332CD42203DE28F0037FE48 /* Resources.xcassets */; };
+		C314B0522040AC34005C0AF1 /* HPCircleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314B0512040AC34005C0AF1 /* HPCircleKit.swift */; };
+		C314B0532040AD6C005C0AF1 /* HPCircleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314B0512040AC34005C0AF1 /* HPCircleKit.swift */; };
 		C352D9A520374DA100252317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9A420374DA100252317 /* AppDelegate.swift */; };
 		C352D9AD20374DA100252317 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9AC20374DA100252317 /* GameViewController.swift */; };
 		C352D9B020374DA100252317 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C352D9AE20374DA100252317 /* Main.storyboard */; };
@@ -20,6 +20,7 @@
 		C386E458203B4A540094F48F /* HPWaveLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386E454203B3DD20094F48F /* HPWaveLoader.swift */; };
 		C386E45B203B4A820094F48F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C386E45A203B4A820094F48F /* Assets.xcassets */; };
 		C3CD3A51203C812B00C856A1 /* HPSquarePulseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */; };
+		C3E8E427204099B600C9B433 /* HPProgressLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */; };
 		C3FE4AF2203DDD47005F5DB6 /* HPCircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352D9BA20374E1C00252317 /* HPCircleLoader.swift */; };
 		C3FE4AF3203DDD47005F5DB6 /* HPBallLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35EDE3B203A39410069ADCF /* HPBallLoader.swift */; };
 		C3FE4AF4203DDD47005F5DB6 /* HPWaveLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386E454203B3DD20094F48F /* HPWaveLoader.swift */; };
@@ -29,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C332CD42203DE28F0037FE48 /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
+		C314B0512040AC34005C0AF1 /* HPCircleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPCircleKit.swift; sourceTree = "<group>"; };
 		C352D9A220374DA100252317 /* Test Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C352D9A420374DA100252317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C352D9AC20374DA100252317 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		C352D9A320374DA100252317 /* Test Application */ = {
 			isa = PBXGroup;
 			children = (
-				C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */,
 				C352D9A420374DA100252317 /* AppDelegate.swift */,
 				C352D9AC20374DA100252317 /* GameViewController.swift */,
 				C352D9AE20374DA100252317 /* Main.storyboard */,
@@ -102,13 +102,14 @@
 			isa = PBXGroup;
 			children = (
 				C352D9BA20374E1C00252317 /* HPCircleLoader.swift */,
+				C314B0512040AC34005C0AF1 /* HPCircleKit.swift */,
 				C35EDE3B203A39410069ADCF /* HPBallLoader.swift */,
 				C386E454203B3DD20094F48F /* HPWaveLoader.swift */,
 				C3CD3A50203C812B00C856A1 /* HPSquarePulseLoader.swift */,
 				C365438C203CC85D00495357 /* HPSlidingBoxLoader.swift */,
+				C3F3EA97203DD2D90091165A /* HPProgressLoader.swift */,
 				C37B88D520373CC2009211A6 /* HPLoaders.h */,
 				C37B88D620373CC2009211A6 /* Info.plist */,
-				C332CD42203DE28F0037FE48 /* Resources.xcassets */,
 			);
 			path = HPLoaders;
 			sourceTree = "<group>";
@@ -210,7 +211,6 @@
 				C352D9B020374DA100252317 /* Main.storyboard in Resources */,
 				C386E45B203B4A820094F48F /* Assets.xcassets in Resources */,
 				C352D9B520374DA100252317 /* LaunchScreen.storyboard in Resources */,
-				C332CD44203DE28F0037FE48 /* Resources.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +218,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C332CD43203DE28F0037FE48 /* Resources.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +234,7 @@
 				C352D9AD20374DA100252317 /* GameViewController.swift in Sources */,
 				C352D9A520374DA100252317 /* AppDelegate.swift in Sources */,
 				C3FE4AF7203DDD47005F5DB6 /* HPProgressLoader.swift in Sources */,
+				C314B0532040AD6C005C0AF1 /* HPCircleKit.swift in Sources */,
 				C3FE4AF4203DDD47005F5DB6 /* HPWaveLoader.swift in Sources */,
 				C3FE4AF3203DDD47005F5DB6 /* HPBallLoader.swift in Sources */,
 			);
@@ -246,7 +246,9 @@
 			files = (
 				C365438D203CC85D00495357 /* HPSlidingBoxLoader.swift in Sources */,
 				C386E456203B4A540094F48F /* HPCircleLoader.swift in Sources */,
+				C314B0522040AC34005C0AF1 /* HPCircleKit.swift in Sources */,
 				C3CD3A51203C812B00C856A1 /* HPSquarePulseLoader.swift in Sources */,
+				C3E8E427204099B600C9B433 /* HPProgressLoader.swift in Sources */,
 				C386E458203B4A540094F48F /* HPWaveLoader.swift in Sources */,
 				C386E457203B4A540094F48F /* HPBallLoader.swift in Sources */,
 			);

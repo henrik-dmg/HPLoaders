@@ -9,10 +9,10 @@
 import UIKit
 import SpriteKit
 
-@IBDesignable class HPCircleLoader: SKView {
+@IBDesignable public class HPCircleLoader: SKView {
 
     private var loaderScene: HPCircleScene?
-    @IBInspectable var ringColor: UIColor = UIColor.white {
+    @IBInspectable public var ringColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.circleNodes.forEach({ (node) in
                 node.color = ringColor
@@ -21,11 +21,11 @@ import SpriteKit
         }
     }
     
-    func startAnimating(with cycleDuration: TimeInterval = 5) {
+    public func startAnimating(with cycleDuration: TimeInterval = 5) {
         loaderScene?.startAnimating(with: cycleDuration)
     }
     
-    func stopAnimating() {
+    public func stopAnimating() {
         loaderScene?.stopAnimating()
     }
 
@@ -45,7 +45,7 @@ import SpriteKit
         setupScene()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupScene()
     }
@@ -53,10 +53,16 @@ import SpriteKit
 
 class HPCircleScene: SKScene {
     public var circleNodes = [SKSpriteNode]()
+    private static let textures = [HPCircleKit.imageOfCircle0(),
+                                   HPCircleKit.imageOfCircle1(),
+                                   HPCircleKit.imageOfCircle2(),
+                                   HPCircleKit.imageOfCircle3(),
+                                   HPCircleKit.imageOfCircle4()]
     
     override func didMove(to view: SKView) {
         for i in 0...4 {
-            let texture = SKTexture(imageNamed: "circle-\(i)")
+            let image = HPCircleScene.textures[i]
+            let texture = SKTexture(image: image)
             let node = SKSpriteNode.init(texture: texture, color: .white, size: self.size)
             node.color = .white
             node.colorBlendFactor = 1

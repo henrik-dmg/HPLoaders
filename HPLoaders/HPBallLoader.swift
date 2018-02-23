@@ -9,20 +9,20 @@
 import UIKit
 import SpriteKit
 
-@IBDesignable class HPBallLoader: SKView {
+@IBDesignable public class HPBallLoader: SKView {
     
     private var loaderScene: HPBallScene?
-    @IBInspectable var ballColor: UIColor = UIColor.white {
+    @IBInspectable public var ballColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.ball.fillColor = ballColor
         }
     }
     
-    func startAnimating(withDurations pulse: TimeInterval = 0.3, restore: TimeInterval = 1) {
+    public func startAnimating(withDurations pulse: TimeInterval = 0.3, restore: TimeInterval = 1) {
         loaderScene?.startAnimating(withDurations: pulse, restore: restore)
     }
     
-    func stopAnimating() {
+    public func stopAnimating() {
         loaderScene?.stopAnimating()
     }
     
@@ -42,7 +42,7 @@ import SpriteKit
         setupScene()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupScene()
     }
