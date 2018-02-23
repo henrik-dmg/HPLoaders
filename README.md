@@ -1,5 +1,6 @@
 # HPLoaders
-Collection of custom loaders, powered by SpriteKit
+Collection of custom loaders, powered by SpriteKit. All loaders are customisable in terms of color, animation speed, etc.
+
 Feel free to contribute and improve efficiency/code/animations etc.
 
 To install, add `pod 'HPLoaders'` to your Podfile
