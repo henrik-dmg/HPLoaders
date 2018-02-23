@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "9.0"
 
-  s.source       = { :git => 'https://github.com/Fri3ndlyGerman/HPLoaders.git', :tag => "1.0.0" }
+  s.source       = { :git => 'https://github.com/Fri3ndlyGerman/HPLoaders.git', :tag => "1.0.1" }
 
   s.source_files = "HPLoaders", "*.{plist,h,swift}"
   s.swift_version = "4.0"
