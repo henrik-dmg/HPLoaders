@@ -30,12 +30,17 @@ import SpriteKit
     }
     
     private var loaderScene: HPProgressScene?
+    public var isAnimating: Bool = false
     
     public func startAnimating(_ duration: TimeInterval = 2) {
-        loaderScene?.startAnimating(duration: duration)
+        if !isAnimating {
+            isAnimating = true
+            loaderScene?.startAnimating(duration: duration)
+        }
     }
     
     public func stopAnimating() {
+        isAnimating = false
         loaderScene?.stopAnimating()
     }
     

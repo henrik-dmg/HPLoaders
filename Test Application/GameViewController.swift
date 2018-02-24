@@ -17,18 +17,20 @@ class GameViewController: UIViewController {
     @IBOutlet var hpWave: HPWaveLoader!
     @IBOutlet var hpPulse: HPSquarePulseLoader!
     @IBOutlet var hpBoxSlider: HPSlidingBoxLoader!
-    @IBOutlet var hpProgress: HPProgressLoader!
+    @IBOutlet var hpCube: HPCubeLoader!
+    @IBOutlet weak var hpProgress: HPProgressLoader!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func start(_ sender: Any) {
-        hpView.startAnimating(with: 3.5)
-        hpBall.startAnimating(withDurations: 0.4, restore: 1.35)
+        hpView.startAnimating(with: 5)
+        hpBall.startAnimating(pulse: 0.4, restore: 1.35)
         hpWave.startAnimating(with: 3.5, amplitude: .full)
-        hpPulse.startAnimating(with: 14, contractionFactor: 0.8)
+        hpPulse.startAnimating(with: 8, contractionFactor: 0.5)
         hpBoxSlider.startAnimating()
+        hpCube.startAnimating()
         hpProgress.startAnimating()
     }
     
@@ -38,6 +40,7 @@ class GameViewController: UIViewController {
         hpWave.stopAnimating()
         hpPulse.stopAnimating()
         hpBoxSlider.stopAnimating()
+        hpCube.stopAnimating()
         hpProgress.stopAnimating()
     }
     

@@ -12,17 +12,23 @@ import SpriteKit
 @IBDesignable public class HPBallLoader: SKView {
     
     private var loaderScene: HPBallScene?
+    public var isAnimating: Bool = false
+    
     @IBInspectable public var ballColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.ball.fillColor = ballColor
         }
     }
     
-    public func startAnimating(withDurations pulse: TimeInterval = 0.3, restore: TimeInterval = 1) {
-        loaderScene?.startAnimating(withDurations: pulse, restore: restore)
+    public func startAnimating(pulse: TimeInterval = 0.3, restore: TimeInterval = 1) {
+        if !isAnimating {
+            isAnimating = true
+            loaderScene?.startAnimating(pulse: pulse, restore: restore)
+        }
     }
     
     public func stopAnimating() {
+        isAnimating = false
         loaderScene?.stopAnimating()
     }
     
@@ -69,7 +75,7 @@ class HPBallScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func startAnimating(withDurations pulse: TimeInterval = 0.5, restore: TimeInterval = 1) {
+    func startAnimating(pulse: TimeInterval = 0.5, restore: TimeInterval = 1) {
         ball.run(SKAction.fadeIn(withDuration: 0.5))
         
         let grow = SKAction.scale(to: 1, duration: pulse)

@@ -12,6 +12,8 @@ import SpriteKit
 @IBDesignable public class HPCircleLoader: SKView {
 
     private var loaderScene: HPCircleScene?
+    public var isAnimating: Bool = false
+    
     @IBInspectable public var ringColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.circleNodes.forEach({ (node) in
@@ -22,10 +24,14 @@ import SpriteKit
     }
     
     public func startAnimating(with cycleDuration: TimeInterval = 5) {
-        loaderScene?.startAnimating(with: cycleDuration)
+        if !isAnimating {
+            isAnimating = true
+            loaderScene?.startAnimating(with: cycleDuration)
+        }
     }
     
     public func stopAnimating() {
+        isAnimating = false
         loaderScene?.stopAnimating()
     }
 

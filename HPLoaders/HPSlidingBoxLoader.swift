@@ -12,6 +12,7 @@ import SpriteKit
 @IBDesignable public class HPSlidingBoxLoader: SKView {
     
     private var loaderScene: HPSlidingBoxScene?
+    public var isAnimating: Bool = false
     
     @IBInspectable public var boxColor: UIColor = UIColor.white {
         didSet {
@@ -20,10 +21,14 @@ import SpriteKit
     }
     
     public func startAnimating() {
-        loaderScene?.startAnimating()
+        if !isAnimating {
+            isAnimating = true
+            loaderScene?.startAnimating()
+        }
     }
     
     public func stopAnimating() {
+        isAnimating = false
         loaderScene?.stopAnimating()
     }
     

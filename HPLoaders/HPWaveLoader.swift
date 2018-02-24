@@ -18,6 +18,8 @@ import SpriteKit
 @IBDesignable public class HPWaveLoader: SKView {
     
     private var loaderScene: HPWaveScene?
+    public var isAnimating: Bool = false
+    
     @IBInspectable public var dotColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.dotColor = dotColor
@@ -32,10 +34,14 @@ import SpriteKit
     }
     
     public func startAnimating(with waveSpeed: TimeInterval = 3, amplitude: WaveAmplitude = .full) {
-        loaderScene?.startAnimating(with: waveSpeed, amplitude: amplitude)
+        if !isAnimating {
+            isAnimating = true
+            loaderScene?.startAnimating(with: waveSpeed, amplitude: amplitude)
+        }
     }
     
     public func stopAnimating() {
+        isAnimating = false
         loaderScene?.stopAnimating()
     }
     

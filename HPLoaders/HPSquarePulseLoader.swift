@@ -12,6 +12,8 @@ import SpriteKit
 @IBDesignable public class HPSquarePulseLoader: SKView {
     
     private var loaderScene: HPSquarePulseScene?
+    public var isAnimating: Bool = false
+    
     @IBInspectable public var dotColor: UIColor = UIColor.white {
         didSet {
             loaderScene?.dots.forEach({ (dot) in
@@ -21,10 +23,14 @@ import SpriteKit
     }
     
     public func startAnimating(with speed: TimeInterval, contractionFactor: CGFloat) {
-        loaderScene?.startAnimating(with: speed, contractionFactor: contractionFactor)
+        if !isAnimating {
+            isAnimating = true
+            loaderScene?.startAnimating(with: speed, contractionFactor: contractionFactor)
+        }
     }
     
     public func stopAnimating() {
+        isAnimating = false
         loaderScene?.stopAnimating()
     }
     
