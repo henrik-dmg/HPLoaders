@@ -26,17 +26,22 @@ import SpriteKit
         }
     }
     
-    @IBInspectable public var amplitude: WaveAmplitude = WaveAmplitude.full
+    @IBInspectable public var amplitude: WaveAmplitude = WaveAmplitude.full {
+        didSet {
+            loaderScene?.amplitude = amplitude
+        }
+    }
+    
     @IBInspectable public var numberOfDots: Int = 3 {
         didSet {
             loaderScene?.makeDots(count: numberOfDots)
         }
     }
     
-    public func startAnimating(with waveSpeed: TimeInterval = 3, amplitude: WaveAmplitude = .full) {
+    public func startAnimating(with waveSpeed: TimeInterval = 3) {
         if !isAnimating {
             isAnimating = true
-            loaderScene?.startAnimating(with: waveSpeed, amplitude: amplitude)
+            loaderScene?.startAnimating(with: waveSpeed)
         }
     }
     
@@ -71,6 +76,7 @@ class HPWaveScene: SKScene {
     
     var dots = [SKShapeNode]()
     var numberOfDots = 5
+    
     var dotColor = UIColor.white {
         didSet {
             dots.forEach { (dot) in
@@ -80,6 +86,7 @@ class HPWaveScene: SKScene {
     }
     
     private var dotWidth: CGFloat = 10.00
+    public var amplitude: WaveAmplitude = WaveAmplitude.full
     
     func makeDots(count: Int) {
         dots.forEach { (dot) in
@@ -113,7 +120,7 @@ class HPWaveScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func startAnimating(with waveSpeed: TimeInterval = 3, amplitude: WaveAmplitude) {
+    func startAnimating(with waveSpeed: TimeInterval = 3) {
         let initial = SKAction.moveTo(y: (self.size.height / CGFloat(amplitude.rawValue)) - (dotWidth / 2), duration: waveSpeed / 4)
         initial.timingMode = .easeOut
         

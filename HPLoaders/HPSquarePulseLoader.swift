@@ -16,9 +16,19 @@ import SpriteKit
     
     @IBInspectable public var dotColor: UIColor = UIColor.white {
         didSet {
-            loaderScene?.dots.forEach({ (dot) in
-                dot.fillColor = dotColor
-            })
+            loaderScene?.dotColor = dotColor
+        }
+    }
+    
+    @IBInspectable public var dotWidth: CGFloat = 10.00 {
+        didSet {
+            loaderScene?.dotWidth = dotWidth
+        }
+    }
+    
+    @IBInspectable public var contractionFactor: CGFloat = 0.5 {
+        didSet {
+            loaderScene?.contractionFactor = contractionFactor
         }
     }
     
@@ -60,9 +70,22 @@ class HPSquarePulseScene: SKScene {
     
     private var initialPositions = [CGPoint]()
     public var dots = [SKShapeNode]()
-    
     private var containerNode: SKSpriteNode?
-    public var dotWidth: CGFloat = 10.00
+    public var contractionFactor: CGFloat = 0.5
+    
+    public var dotColor: UIColor = UIColor.white {
+        didSet {
+            dots.forEach { (dot) in
+                dot.fillColor = dotColor
+            }
+        }
+    }
+    
+    public var dotWidth: CGFloat = 10.00 {
+        didSet {
+            makeDots()
+        }
+    }
     
     func makeDots() {
         initialPositions.removeAll()

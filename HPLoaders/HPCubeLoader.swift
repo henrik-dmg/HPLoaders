@@ -12,21 +12,34 @@ import SpriteKit
 @IBDesignable public class HPCubeLoader: SKView {
     
     private var loaderScene: HPCubeScene?
+    
     @IBInspectable public var firstCubeColor: UIColor = UIColor.white {
         didSet {
-            
+            loaderScene?.fillColors[0] = firstCubeColor
         }
     }
     
     @IBInspectable public var secondCubeColor: UIColor = UIColor.white {
         didSet {
-            
+            loaderScene?.fillColors[1] = secondCubeColor
         }
     }
     
     @IBInspectable public var thirdCubeColor: UIColor = UIColor.white {
         didSet {
-            
+            loaderScene?.fillColors[2] = thirdCubeColor
+        }
+    }
+    
+    @IBInspectable public var cornerRadius: CGFloat = 10 {
+        didSet {
+            loaderScene?.cornerRadius = cornerRadius
+        }
+    }
+    
+    @IBInspectable public var boxSpacing: CGFloat = 10 {
+        didSet {
+            loaderScene?.boxSpacing = boxSpacing
         }
     }
     
@@ -70,10 +83,12 @@ class HPCubeScene: SKScene {
     var boxes = [SKShapeNode]()
     private var boxPositions = [CGPoint]()
     
-    public var boxColor: UIColor = UIColor.white {
+    public var fillColors: [UIColor] = [UIColor.white,
+                                 UIColor.white,
+                                 UIColor.white] {
         didSet {
-            boxes.forEach { (box) in
-                box.fillColor = boxColor
+            for i in 0...boxes.count - 1 {
+                boxes[i].fillColor = fillColors[i]
             }
         }
     }
@@ -108,8 +123,9 @@ class HPCubeScene: SKScene {
         for i in 0...2 {
             let shapeNode = SKShapeNode(rectOf: boxSize, cornerRadius: cornerRadius)
             shapeNode.position = self.boxPositions[i]
-            shapeNode.fillColor = self.boxColor
+            shapeNode.fillColor = self.fillColors[i]
             shapeNode.lineWidth = 0
+            shapeNode.alpha = 0
             boxes.append(shapeNode)
             self.addChild(shapeNode)
         }
@@ -129,6 +145,7 @@ class HPCubeScene: SKScene {
     func startAnimating(_ duration: TimeInterval = 4.5) {
         let phaseDuration = duration / 10
         for i in 0...boxes.count - 1 {
+            boxes[i].fadeIn()
             boxes[i].run(SKAction.wait(forDuration: Double(2 - i) * phaseDuration), completion: {
                 self.boxes[i].run(SKAction.repeatForever(self.animationsFrom(i, duration: phaseDuration)))
             })
@@ -136,7 +153,11 @@ class HPCubeScene: SKScene {
     }
     
     func stopAnimating() {
-        
+        boxes.forEach { (box) in
+            box.run(SKAction.fadeOut(withDuration: 0.5), completion: {
+                self.setupScene()
+            })
+        }
     }
     
     func animationsFrom(_ index: Int, duration: TimeInterval) -> SKAction {

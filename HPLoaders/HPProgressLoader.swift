@@ -23,12 +23,6 @@ import SpriteKit
         }
     }
     
-    public var animationDuration: TimeInterval = 2 {
-        didSet {
-            loaderScene?.animationDuration = animationDuration
-        }
-    }
-    
     private var loaderScene: HPProgressScene?
     public var isAnimating: Bool = false
     
@@ -78,13 +72,6 @@ class HPProgressScene: SKScene {
             bar?.fillColor = barColor
         }
     }
-    
-    var animationDuration: TimeInterval = 2 {
-        didSet {
-            makeAnimations(animationDuration)
-        }
-    }
-    
     
     private var line: SKShapeNode?
     private var bar: SKShapeNode?
@@ -143,7 +130,7 @@ class HPProgressScene: SKScene {
             bar?.run(SKAction.repeatForever(scale))
             bar?.run(SKAction.repeatForever(move))
         } else {
-            makeAnimations(self.animationDuration)
+            makeAnimations(duration)
             startAnimating(duration: duration)
         }
     }
@@ -152,6 +139,8 @@ class HPProgressScene: SKScene {
         line?.fadeOut()
         bar?.run(SKAction.speed(to: 3, duration: 0.3))
         bar?.run(SKAction.fadeOut(withDuration: 0.5), completion: {
+            self.bar?.removeAllActions()
+            self.bar?.speed = 1
             self.bar?.xScale = 0
             self.bar?.position = CGPoint(x: 0, y: 0)
         })

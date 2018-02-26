@@ -52,6 +52,23 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4l4-el-kDz" secondAttribute="height" multiplier="1:1" id="3nk-r2-6Kk"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="boxSpacing">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="firstCubeColor">
+                                        <color key="value" red="0.9875444769859314" green="0.56048529326895369" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondCubeColor">
+                                        <color key="value" red="0.90980392160000001" green="0.22352941179999999" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="thirdCubeColor">
+                                        <color key="value" red="0.61176470589999998" green="0.74901960779999999" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22B-W6-tup" customClass="HPSlidingBoxLoader" customModule="Test_Application" customModuleProvider="target">
                                 <rect key="frame" x="258.33333333333331" y="185" width="93" height="93.333333333333314"/>
